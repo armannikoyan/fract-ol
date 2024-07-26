@@ -6,7 +6,7 @@
 /*   By: anikoyan <anikoyan@student.42yerevan.am>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 17:42:34 by anikoyan          #+#    #+#             */
-/*   Updated: 2024/07/23 14:34:34 by anikoyan         ###   ########.fr       */
+/*   Updated: 2024/07/26 13:19:08 by anikoyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int	main(int argc, char **argv)
 {
 	t_fractal	fractal;
 
-	if ((2 == argc && !ft_strncmp(argv[1], "M", 1))
-		|| (4 == argc && !ft_strncmp(argv[1], "J", 1)))
+	if ((2 == argc && !ft_strncmp(argv[1], "M", 1) && ft_strlen(argv[1]) == 1)
+		|| (4 == argc && !ft_strncmp(argv[1], "J", 1) && ft_strlen(argv[1]) == 1))
 	{
 		fractal.name = argv[1];
 		fractal.julia_re = ft_atof(argv[2]);
