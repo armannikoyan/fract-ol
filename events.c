@@ -6,7 +6,7 @@
 /*   By: anikoyan <anikoyan@student.42yerevan.am>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 20:29:37 by anikoyan          #+#    #+#             */
-/*   Updated: 2024/07/26 13:18:06 by anikoyan         ###   ########.fr       */
+/*   Updated: 2024/07/24 14:00:12 by anikoyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ int	key_handler(int keysym, t_fractal *fractal)
 	if (keysym == 53)
 		close_handler(fractal);
 	else if (keysym == 123)
-		fractal->shift_x -= 0.15 * fractal->zoom;
-	else if (keysym == 124)
 		fractal->shift_x += 0.15 * fractal->zoom;
+	else if (keysym == 124)
+		fractal->shift_x -= 0.15 * fractal->zoom;
 	else if (keysym == 125)
-		fractal->shift_y -= 0.15 * fractal->zoom;
-	else if (keysym == 126)
 		fractal->shift_y += 0.15 * fractal->zoom;
+	else if (keysym == 126)
+		fractal->shift_y -= 0.15 * fractal->zoom;
 	else if (keysym == 30 && fractal->iterations_definition < 200)
 		fractal->iterations_definition += 5;
 	else if (keysym == 33 && fractal->iterations_definition > 5)
