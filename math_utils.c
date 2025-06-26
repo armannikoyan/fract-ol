@@ -6,7 +6,7 @@
 /*   By: anikoyan <anikoyan@student.42yerevan.am>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 19:43:52 by anikoyan          #+#    #+#             */
-/*   Updated: 2024/07/22 19:57:08 by anikoyan         ###   ########.fr       */
+/*   Updated: 2025/06/26 16:47:02 by anikoyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 double	ft_scale(double unscaled_num, double new_min,
 		double new_max, double old_max)
 {
-	return ((new_max - new_min) * (unscaled_num) / (old_max) + new_min);
+	return ((new_max - new_min) * unscaled_num / old_max + new_min);
 }
 
 t_complex	ft_multiply(t_complex a, t_complex b)

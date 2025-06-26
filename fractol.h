@@ -6,7 +6,7 @@
 /*   By: anikoyan <anikoyan@student.42yerevan.am>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 17:43:27 by anikoyan          #+#    #+#             */
-/*   Updated: 2024/07/23 18:50:08 by anikoyan         ###   ########.fr       */
+/*   Updated: 2025/06/26 15:52:03 by anikoyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 # define FRACTOL_H
 
 # include <stdio.h>
-# include <mlx.h>
 
 # include "libft/libft.h"
+# include "minilibx/mlx.h"
 
 typedef struct s_complex
 {

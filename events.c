@@ -6,7 +6,7 @@
 /*   By: anikoyan <anikoyan@student.42yerevan.am>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 20:29:37 by anikoyan          #+#    #+#             */
-/*   Updated: 2024/07/24 14:00:12 by anikoyan         ###   ########.fr       */
+/*   Updated: 2025/06/26 17:11:49 by anikoyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,24 @@ int	key_handler(int keysym, t_fractal *fractal)
 
 int	mouse_handler(int button, int x, int y, t_fractal *fractal)
 {
-	(void)x;
-	(void)y;
+	double zoom_factor = 1.05;
+	double mouse_re = ft_scale(x, -2, +2, 799);
+	double mouse_im = ft_scale(y, +2, -2, 799); // Corrected Y-axis
+	
+	double old_zoom = fractal->zoom;
+	
 	if (button == 4)
-		fractal->zoom *= 1.05;
+	{
+		fractal->zoom *= zoom_factor;
+		fractal->shift_x += mouse_re * (old_zoom - fractal->zoom);
+		fractal->shift_y += mouse_im * (old_zoom - fractal->zoom);
+	}
 	else if (button == 5)
-		fractal->zoom /= 1.05;
+	{
+		fractal->zoom /= zoom_factor;
+		fractal->shift_x += mouse_re * (old_zoom - fractal->zoom);
+		fractal->shift_y += mouse_im * (old_zoom - fractal->zoom);
+	}
 	ft_fractal_render(fractal);
 	return (0);
 }
